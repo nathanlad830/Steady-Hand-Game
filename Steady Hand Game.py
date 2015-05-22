@@ -1,13 +1,16 @@
+# Import Libraries
 import RPi.GPIO as GPIO
 import time
 
+# Setup GPIO
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
-#set pin numbers
+
+# Set Pin Numbers
 LED = 17
 WIRE = 24
 
-#setup GPIO output channel's
+# Setup GPIO Output Channels
 GPIO.setup(LED, GPIO.OUT)
 GPIO.setup(WIRE, GPIO.IN, pull_up_down = GPIO.PUD_UP)
 while True:
