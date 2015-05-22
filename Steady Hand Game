@@ -1,0 +1,18 @@
+import RPi.GPIO as GPIO
+import time
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
+#set pin numbers
+LED = 17
+WIRE = 24
+
+#setup GPIO output channel's
+GPIO.setup(LED, GPIO.OUT)
+GPIO.setup(WIRE, GPIO.IN, pull_up_down = GPIO.PUD_UP)
+while True:
+	if (GPIO.input(WIRE) == 0):
+        GPIO.output(LED, True)
+        time.sleep(2)
+        GPIO.output(LED, False)
+
