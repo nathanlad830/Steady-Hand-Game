@@ -14,8 +14,8 @@ WIRE = 24
 GPIO.setup(LED, GPIO.OUT)
 GPIO.setup(WIRE, GPIO.IN, pull_up_down = GPIO.PUD_UP)
 while True:
-	if (GPIO.input(WIRE) == 0):
-        GPIO.output(LED, True)
+	if (GPIO.input(WIRE) == 0): 	#Check if the wire has been touched
+        GPIO.output(LED, True)		#If the wire has been touched, run this code
         time.sleep(2)
         GPIO.output(LED, False)
 
